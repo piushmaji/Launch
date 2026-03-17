@@ -1,0 +1,442 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --purple-dark: #3E206D;
+    --purple-mid: #6B3BB3;
+    --purple-light: #ede9f8;
+    --purple-pale: #f3f0fc;
+    --white: #ffffff;
+    --text-dark: #A087C7;
+    --text-grey: #555577;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: var(--white);
+    color: var(--text-dark);
+    overflow-x: hidden;
+}
+
+/* ── NAV ── */
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 22px 60px;
+    background: var(--white);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--purple-mid);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.logo svg {
+    width: 36px;
+    height: 36px;
+}
+
+/* ── HERO ── */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 80px 80px;
+    min-height: 520px;
+    background: var(--white);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-left {
+    max-width: 560px;
+    z-index: 2;
+}
+
+.hero-powered {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: var(--purple-mid);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.hero-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(2.6rem, 5vw, 3.8rem);
+    font-weight: 900;
+    line-height: 1.05;
+    color: var(--purple-dark);
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    margin-bottom: 24px;
+}
+
+/* Logo image */
+.logo-img {
+    width: 200px;
+    height: 60px;
+    object-fit: contain;
+}
+
+/* Mascot image */
+.mascot-wrapper {
+    position: relative;
+    width: 400px;
+    height: 400px;
+}
+
+.mascot-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    animation: floatBee 3.8s ease-in-out infinite;
+    filter: drop-shadow(0 24px 48px rgba(90, 34, 200, 0.15));
+}
+
+@keyframes floatBee {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-14px);
+    }
+}
+
+/* Responsive fix */
+@media (max-width: 900px) {
+    .mascot-wrapper {
+        width: 260px;
+        height: 260px;
+    }
+}
+
+.hero-sub {
+    font-size: 1rem;
+    line-height: 1.75;
+    color: var(--purple-mid);
+    margin-bottom: 28px;
+    max-width: 460px;
+}
+
+.hero-price {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 36px;
+}
+
+.hero-btns {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.btn-primary {
+    background: var(--purple-dark);
+    color: var(--white);
+    padding: 14px 28px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border: 2px solid var(--purple-dark);
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-primary:hover {
+    background: var(--purple-mid);
+    border-color: var(--purple-mid);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--text-dark);
+    padding: 14px 28px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border: 2px solid var(--text-dark);
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-secondary:hover {
+    background: var(--text-dark);
+    color: var(--white);
+}
+
+.hero-right {
+    flex-shrink: 0;
+    width: 420px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+/* Rocket mascot placeholder – 3D bee on rocket */
+.mascot-wrapper {
+    position: relative;
+    width: 380px;
+    height: 380px;
+}
+
+.mascot-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    /* Gentle float animation */
+    animation: floatBee 3.8s ease-in-out infinite;
+}
+
+@keyframes floatBee {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-14px);
+    }
+}
+
+/* ── STATS STRIP ── */
+.stats {
+    background: var(--purple-pale);
+    padding: 60px 80px;
+}
+
+.stats-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--purple-mid);
+    margin-bottom: 40px;
+}
+
+.stats-grid {
+    display: flex;
+    gap: 0;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    min-width: 220px;
+    padding-right: 60px;
+}
+
+.stat-number {
+    font-size: clamp(2.2rem, 4vw, 3rem);
+    font-weight: 300;
+    color: var(--text-dark);
+    line-height: 1;
+    margin-bottom: 8px;
+}
+
+.stat-desc {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--text-grey);
+}
+
+/* ── FOR NEW ENTREPRENEURS ── */
+.entrepreneurs {
+    padding: 80px 80px;
+    background: var(--white);
+}
+
+.section-title {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    color: var(--purple-dark);
+    letter-spacing: 1px;
+    margin-bottom: 48px;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.card {
+    border: 1.5px solid #d8d0ef;
+    padding: 32px 28px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    border-color: var(--purple-mid);
+    box-shadow: 0 4px 24px rgba(90, 34, 200, 0.08);
+}
+
+.card-title {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--text-dark);
+    margin-bottom: 14px;
+}
+
+.card-desc {
+    font-size: 0.9rem;
+    color: var(--text-grey);
+    line-height: 1.7;
+}
+
+/* ── 3 SIMPLE STEPS ── */
+.steps {
+    background: var(--purple-pale);
+    padding: 80px 80px;
+}
+
+.step-block {
+    max-width: 540px;
+}
+
+.step-number {
+    font-size: clamp(3.5rem, 7vw, 5rem);
+    font-weight: 300;
+    color: var(--purple-mid);
+    opacity: 0.5;
+    line-height: 1;
+    margin-bottom: 12px;
+}
+
+.step-name {
+    font-size: 1rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--text-dark);
+    margin-bottom: 14px;
+}
+
+.step-desc {
+    font-size: 0.95rem;
+    color: var(--text-grey);
+    line-height: 1.75;
+    margin-bottom: 28px;
+}
+
+.step-progress {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 24px;
+}
+
+.dot {
+    height: 4px;
+    border-radius: 2px;
+}
+
+.dot.active {
+    width: 52px;
+    background: var(--purple-mid);
+}
+
+.dot.inactive {
+    width: 36px;
+    background: #ccc;
+}
+
+.step-next {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--purple-mid);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: gap 0.2s;
+}
+
+.step-next:hover {
+    gap: 14px;
+}
+
+/* ── FOOTER ── */
+footer {
+    background: var(--purple-dark);
+    color: rgba(255, 255, 255, 0.6);
+    text-align: center;
+    padding: 28px;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+
+footer span {
+    color: #fff;
+    font-weight: 700;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+    .hero {
+        flex-direction: column;
+        padding: 40px 28px 60px;
+        text-align: center;
+    }
+
+    .hero-right {
+        width: 100%;
+        justify-content: center;
+        margin-top: 40px;
+    }
+
+    .mascot-wrapper {
+        width: 260px;
+        height: 260px;
+    }
+
+    .hero-btns {
+        justify-content: center;
+    }
+
+    .stats,
+    .entrepreneurs,
+    .steps {
+        padding: 50px 28px;
+    }
+
+    .cards-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stats-grid {
+        flex-direction: column;
+        gap: 32px;
+    }
+}
