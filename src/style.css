@@ -9,7 +9,7 @@
 :root {
     --purple-dark: #3E206D;
     --purple-mid: #6B3BB3;
-    --purple-light: #ede9f8;
+    --purple-light: #A087C7;
     --purple-pale: #f3f0fc;
     --white: #ffffff;
     --text-dark: #A087C7;
@@ -17,7 +17,7 @@
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Poppins", sans-serif;
     background: var(--white);
     color: var(--text-dark);
     overflow-x: hidden;
@@ -66,7 +66,7 @@ nav {
 }
 
 .hero-powered {
-    font-size: 0.72rem;
+    font-size: 18px;
     font-weight: 700;
     letter-spacing: 3px;
     color: var(--purple-mid);
@@ -75,9 +75,11 @@ nav {
 }
 
 .hero-title {
-    font-family: 'Montserrat', sans-serif;
+    width: 700px;
+    font-family: "Poppins", sans-serif;
     font-size: clamp(2.6rem, 5vw, 3.8rem);
-    font-weight: 900;
+    font-weight: 600;
+    font-style: normal;
     line-height: 1.05;
     color: var(--purple-dark);
     text-transform: uppercase;
@@ -110,17 +112,18 @@ nav {
 
 
 .hero-sub {
-    font-size: 1rem;
+    font-size: 26px;
     line-height: 1.75;
-    color: var(--purple-mid);
+    color: var(--purple-light);
     margin-bottom: 28px;
-    max-width: 460px;
+    width: 800px;
+    font-weight: 400;
 }
 
 .hero-price {
-    font-size: 1.05rem;
+    font-size:22px;
     font-weight: 700;
-    color: var(--text-dark);
+    color: var(--purple-mid);
     margin-bottom: 36px;
 }
 
@@ -212,18 +215,18 @@ nav {
 }
 
 .stats-label {
-    font-size: 0.75rem;
-    font-weight: 700;
+    font-size:26px;
+    font-weight: 500;
     letter-spacing: 3px;
     text-transform: uppercase;
-    color: var(--purple-mid);
+    color: var(--purple-light);
     margin-bottom: 40px;
 }
 
 .stats-grid {
     display: flex;
     gap: 0;
-    justify-content: flex-start;
+    justify-content:space-between;
     flex-wrap: wrap;
 }
 
@@ -235,17 +238,17 @@ nav {
 .stat-number {
     font-size: clamp(2.2rem, 4vw, 3rem);
     font-weight: 300;
-    color: var(--text-dark);
+    color:black;
     line-height: 1;
     margin-bottom: 8px;
 }
 
 .stat-desc {
-    font-size: 0.7rem;
-    font-weight: 700;
+    font-size:18px;
+    font-weight: 200;
     letter-spacing: 2.5px;
     text-transform: uppercase;
-    color: var(--text-grey);
+    color:black;
 }
 
 /* ── FOR NEW ENTREPRENEURS ── */
@@ -255,8 +258,8 @@ nav {
 }
 
 .section-title {
-    font-size: clamp(1.5rem, 3vw, 2rem);
-    font-weight: 900;
+    font-size:36px;
+    font-weight: 400;
     text-transform: uppercase;
     color: var(--purple-dark);
     letter-spacing: 1px;
