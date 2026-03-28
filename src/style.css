@@ -204,8 +204,11 @@ nav {
 }
 
 .stat-item {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
     min-width: 220px;
-    padding-right: 60px;
 }
 
 .stat-number {
