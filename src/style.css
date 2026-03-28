@@ -468,7 +468,6 @@ nav {
     color: var(--purple-dark);
     letter-spacing: 1px;
     margin-bottom: 48px;
-    text-decoration: underline;
     text-underline-offset: 6px;
 }
 
