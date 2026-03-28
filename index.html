@@ -85,11 +85,11 @@
   <section class="video-section">
     <div class="video-wrapper" id="videoWrapper">
       <!-- Thumbnail shown before play -->
-      <div class="video-thumbnail" id="videoThumb" onclick="playVideo()">
+      <div class="video-thumbnail" id="videoThumb"">
         <img
           src="https://img.youtube.com/vi/jo3p7O8n6is/maxresdefault.jpg"
           alt="Watch how Launch works"
-          onerror="this.src='https://www.youtube.com/watch?v=jo3p7O8n6is&t=132s'"
+          onerror="this.src='https://img.youtube.com/vi/jo3p7O8n6is/hqdefault.jpg'"
         />
         <div class="play-btn">
           <svg viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -230,5 +230,21 @@
   </footer>
 
 <script src="src/main.js" type="module"></script>
+
+<script>
+document.getElementById('videoThumb').addEventListener('click', playVideo);
+
+function playVideo() {
+  const videoId = 'jo3p7O8n6is';
+  const startTime = 132;
+
+  const wrapper = document.getElementById('videoWrapper');
+  const iframe  = document.getElementById('videoIframe');
+
+  iframe.src = `https://www.youtube.com/embed/${videoId}?start=${startTime}&autoplay=1&rel=0`;
+
+  wrapper.classList.add('playing');
+}
+</script>
 </body>
 </html>

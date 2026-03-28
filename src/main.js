@@ -21,16 +21,3 @@ function nextStep() {
 }
 
 document.addEventListener('DOMContentLoaded', () => goToStep(1));
-
-   /* YouTube play on thumbnail click */
-    function playVideo() {
-  const videoId = 'jo3p7O8n6is';
-  const startTime = 132;
-
-  const wrapper = document.getElementById('videoWrapper');
-  const iframe  = document.getElementById('videoIframe');
-
-  iframe.src = `https://www.youtube.com/embed/${videoId}?start=${startTime}&autoplay=1&rel=0`;
-
-  wrapper.classList.add('playing');
-}
