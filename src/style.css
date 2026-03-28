@@ -43,9 +43,13 @@ nav {
     letter-spacing: 2px;
 }
 
-.logo svg {
-    width: 36px;
-    height: 36px;
+.logo svg { width: 36px; height: 36px; }
+
+/* Logo image */
+.logo-img {
+    width: 200px;
+    height: 60px;
+    object-fit: contain;
 }
 
 /* ── HERO ── */
@@ -87,13 +91,6 @@ nav {
     margin-bottom: 24px;
 }
 
-/* Logo image */
-.logo-img {
-    width: 200px;
-    height: 60px;
-    object-fit: contain;
-}
-
 /* Mascot image */
 .mascot-wrapper {
     position: relative;
@@ -109,8 +106,6 @@ nav {
     filter: drop-shadow(0 24px 48px rgba(90, 34, 200, 0.15));
 }
 
-
-
 .hero-sub {
     font-size: 26px;
     line-height: 1.75;
@@ -121,7 +116,7 @@ nav {
 }
 
 .hero-price {
-    font-size:22px;
+    font-size: 22px;
     font-weight: 700;
     color: var(--purple-mid);
     margin-bottom: 36px;
@@ -181,31 +176,9 @@ nav {
     align-items: center;
 }
 
-/* Rocket mascot placeholder – 3D bee on rocket */
-.mascot-wrapper {
-    position: relative;
-    width: 380px;
-    height: 380px;
-}
-
-.mascot-wrapper img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    /* Gentle float animation */
-    animation: floatBee 3.8s ease-in-out infinite;
-}
-
 @keyframes floatBee {
-
-    0%,
-    100% {
-        transform: translateY(0px);
-    }
-
-    50% {
-        transform: translateY(-14px);
-    }
+    0%, 100% { transform: translateY(0px); }
+    50%       { transform: translateY(-14px); }
 }
 
 /* ── STATS STRIP ── */
@@ -215,7 +188,7 @@ nav {
 }
 
 .stats-label {
-    font-size:26px;
+    font-size: 26px;
     font-weight: 500;
     letter-spacing: 3px;
     text-transform: uppercase;
@@ -226,7 +199,7 @@ nav {
 .stats-grid {
     display: flex;
     gap: 0;
-    justify-content:space-between;
+    justify-content: space-between;
     flex-wrap: wrap;
 }
 
@@ -238,17 +211,17 @@ nav {
 .stat-number {
     font-size: clamp(2.2rem, 4vw, 3rem);
     font-weight: 300;
-    color:black;
+    color: black;
     line-height: 1;
     margin-bottom: 8px;
 }
 
 .stat-desc {
-    font-size:18px;
+    font-size: 18px;
     font-weight: 200;
     letter-spacing: 2.5px;
     text-transform: uppercase;
-    color:black;
+    color: black;
 }
 
 /* ── FOR NEW ENTREPRENEURS ── */
@@ -258,7 +231,7 @@ nav {
 }
 
 .section-title {
-    font-size:36px;
+    font-size: 36px;
     font-weight: 400;
     text-transform: uppercase;
     color: var(--purple-dark);
@@ -298,16 +271,94 @@ nav {
     line-height: 1.7;
 }
 
-/* ── 3 SIMPLE STEPS ── */
+/* ── VIDEO SECTION ── */
+.video-section {
+    background: var(--white);
+    padding: 60px 80px;
+    display: flex;
+    justify-content: center;
+}
+
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 860px;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 12px 48px rgba(62, 32, 109, 0.18);
+}
+
+.video-thumbnail {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    position: relative;
+}
+
+.video-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.play-btn {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(62, 32, 109, 0.28);
+    transition: background 0.2s;
+}
+
+.play-btn:hover { background: rgba(62, 32, 109, 0.42); }
+
+.play-btn svg {
+    width: 72px;
+    height: 72px;
+    filter: drop-shadow(0 2px 12px rgba(0,0,0,0.4));
+    transition: transform 0.2s;
+}
+
+.play-btn:hover svg { transform: scale(1.1); }
+
+.video-iframe {
+    display: none;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: none;
+}
+
+.video-wrapper.playing .video-thumbnail { display: none; }
+.video-wrapper.playing .video-iframe    { display: block; }
+
+/* ── STEPS SECTION ── */
 .steps {
     background: var(--purple-pale);
     padding: 80px 80px;
+    /* border: 1.5px dashed #c4b5f5; */
 }
-
+ 
+/* All steps hidden by default; JS adds .active to show one */
 .step-block {
-    max-width: 540px;
+    max-width: 480px;
+    padding-bottom: 48px;
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(20px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
+.step-block.active {
+    position: relative;
+    opacity: 1;
+    pointer-events: all;
+    transform: translateX(0);
+}
+ 
 .step-number {
     font-size: clamp(3.5rem, 7vw, 5rem);
     font-weight: 300;
@@ -316,7 +367,7 @@ nav {
     line-height: 1;
     margin-bottom: 12px;
 }
-
+ 
 .step-name {
     font-size: 1rem;
     font-weight: 800;
@@ -325,35 +376,16 @@ nav {
     color: var(--text-dark);
     margin-bottom: 14px;
 }
-
+ 
 .step-desc {
     font-size: 0.95rem;
     color: var(--text-grey);
     line-height: 1.75;
     margin-bottom: 28px;
+    max-width: 420px;
 }
-
-.step-progress {
-    display: flex;
-    gap: 8px;
-    margin-bottom: 24px;
-}
-
-.dot {
-    height: 4px;
-    border-radius: 2px;
-}
-
-.dot.active {
-    width: 52px;
-    background: var(--purple-mid);
-}
-
-.dot.inactive {
-    width: 36px;
-    background: #ccc;
-}
-
+ 
+/* Next Steps link */
 .step-next {
     font-size: 0.8rem;
     font-weight: 700;
@@ -365,11 +397,252 @@ nav {
     align-items: center;
     gap: 8px;
     cursor: pointer;
+    background: none;
+    border: none;
+    font-family: inherit;
+    margin-bottom: 32px;
     transition: gap 0.2s;
 }
+ 
+.step-next:hover { gap: 14px; }
+ 
+/* Progress dots bar — 3 clickable pills */
+.step-progress {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+ 
+.step-dot {
+    height: 4px;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: width 0.25s, background 0.25s;
+    background: #ccc;
+    width: 36px;
+    border: none;
+    padding: 0;
+}
+ 
+.step-dot.active {
+    background: var(--purple-mid);
+    width: 52px;
+}
+ 
+/* Step 03 deliverables */
+.step-deliverables {
+    border-top: 1px solid #d8d0ef;
+    padding-top: 16px;
+    max-width: 420px;
+    margin-bottom: 28px;
+}
+ 
+.step-deliverables-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--purple-light);
+    margin-bottom: 10px;
+}
+ 
+.step-deliverables-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 24px;
+    font-size: 0.85rem;
+    color: var(--purple-mid);
+    font-weight: 500;
+}
 
-.step-next:hover {
-    gap: 14px;
+/* ── PRICING SECTION ── */
+.pricing {
+    padding: 80px 80px;
+    background: var(--white);
+}
+
+.pricing-title {
+    font-size: 36px;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: var(--purple-dark);
+    letter-spacing: 1px;
+    margin-bottom: 48px;
+    text-decoration: underline;
+    text-underline-offset: 6px;
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    align-items: stretch;
+    /* Blur siblings on hover */
+    transition: filter 0.3s ease;
+}
+
+/* Blur ALL cards when grid is hovered */
+.pricing-grid:hover .pricing-card {
+    filter: blur(2px) brightness(0.85);
+    transform: scale(0.98);
+}
+
+/* UN-blur the card being hovered */
+.pricing-grid:hover .pricing-card:hover {
+    filter: none;
+    transform: scale(1.02);
+    z-index: 2;
+}
+
+.pricing-card {
+    border: 1.5px solid #d8d0ef;
+    padding: 36px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    transition: filter 0.3s ease, transform 0.3s ease;
+    position: relative;
+}
+
+.pricing-card.popular {
+    background: #6B3BB3;
+    border-color: #6B3BB3;
+    color: white;
+}
+
+.plan-name {
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--purple-dark);
+    margin-bottom: 6px;
+}
+
+.pricing-card.popular .plan-name { color: white; }
+
+.plan-tag {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--purple-light);
+    margin-bottom: 24px;
+}
+
+.pricing-card.popular .plan-tag { color: rgba(255,255,255,0.65); }
+
+.plan-price {
+    font-size: 2.8rem;
+    font-weight: 300;
+    color: var(--purple-dark);
+    line-height: 1;
+    margin-bottom: 8px;
+}
+
+.pricing-card.popular .plan-price { color: white; }
+
+.plan-freq {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--purple-light);
+    margin-left: 4px;
+}
+
+.pricing-card.popular .plan-freq { color: rgba(255,255,255,0.7); }
+
+.plan-note {
+    font-size: 0.82rem;
+    color: var(--purple-light);
+    margin-bottom: 28px;
+}
+
+.pricing-card.popular .plan-note { color: rgba(255,255,255,0.7); }
+
+.plan-features {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 32px;
+    flex: 1;
+}
+
+.plan-features li {
+    font-size: 0.9rem;
+    color: var(--text-grey);
+}
+
+.pricing-card.popular .plan-features li { color: rgba(255,255,255,0.9); }
+
+.plan-btn-primary {
+    display: block;
+    text-align: center;
+    padding: 14px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 2px solid var(--purple-dark);
+    color: var(--purple-dark);
+    background: transparent;
+    margin-bottom: 10px;
+    transition: background 0.2s, color 0.2s;
+}
+
+.plan-btn-primary:hover {
+    background: var(--purple-dark);
+    color: white;
+}
+
+.pricing-card.popular .plan-btn-primary {
+    border-color: white;
+    color: white;
+}
+
+.pricing-card.popular .plan-btn-primary:hover {
+    background: white;
+    color: var(--purple-mid);
+}
+
+.plan-btn-secondary {
+    display: block;
+    text-align: center;
+    padding: 14px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 2px solid var(--purple-light);
+    color: var(--purple-light);
+    background: transparent;
+    margin-bottom: 20px;
+    transition: background 0.2s, color 0.2s;
+}
+
+.plan-btn-secondary:hover {
+    background: var(--purple-light);
+    color: white;
+}
+
+.pricing-card.popular .plan-btn-secondary {
+    border-color: rgba(255,255,255,0.4);
+    color: rgba(255,255,255,0.7);
+}
+
+.plan-footer-note {
+    font-size: 0.78rem;
+    color: var(--purple-light);
+    text-align: center;
+}
+
+.pricing-card.popular .plan-footer-note { color: rgba(255,255,255,0.5); }
+
+@media (max-width: 900px) {
+    .pricing { padding: 50px 28px; }
+    .pricing-grid { grid-template-columns: 1fr; }
+    .pricing-grid:hover .pricing-card { filter: none; transform: none; }
 }
 
 /* ── FOOTER ── */
@@ -380,6 +653,7 @@ footer {
     padding: 28px;
     font-size: 0.8rem;
     letter-spacing: 1px;
+    margin-top: 60px;
 }
 
 footer span {
@@ -395,53 +669,23 @@ footer span {
         text-align: center;
     }
 
+    .hero-title { width: 100%; }
+    .hero-sub   { width: 100%; }
+
     .hero-right {
         width: 100%;
         justify-content: center;
         margin-top: 40px;
     }
 
-    .mascot-wrapper {
-        width: 260px;
-        height: 260px;
-    }
-
-    .hero-btns {
-        justify-content: center;
-    }
+    .mascot-wrapper { width: 260px; height: 260px; }
+    .hero-btns      { justify-content: center; }
 
     .stats,
     .entrepreneurs,
-    .steps {
-        padding: 50px 28px;
-    }
+    .steps,
+    .video-section { padding: 50px 28px; }
 
-    .cards-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .stats-grid {
-        flex-direction: column;
-        gap: 32px;
-    }
-}
-
-@keyframes floatBee {
-
-    0%,
-    100% {
-        transform: translateY(0px);
-    }
-
-    50% {
-        transform: translateY(-14px);
-    }
-}
-
-/* Responsive fix */
-@media (max-width: 900px) {
-    .mascot-wrapper {
-        width: 260px;
-        height: 260px;
-    }
+    .cards-grid     { grid-template-columns: 1fr; }
+    .stats-grid     { flex-direction: column; gap: 32px; }
 }

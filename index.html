@@ -11,9 +11,7 @@
     href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Saira:ital,wght@0,100..900;1,100..900&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="src/style.css">
-  <link rel="shortcut icon" href="./src/assets/Images/Logo/logo.svg" type="image/x-icon">
-
-
+  <link rel="shortcut icon" href="./src/assets/Images/Logo/logo.svg" type="image/x-icon" sizes="32x32">
 </head>
 
 <body>
@@ -39,10 +37,8 @@
       </div>
     </div>
     <div class="hero-right">
-      <div class="hero-right">
-        <div class="mascot-wrapper">
-          <img src="./src/assets/Images/Logo/logo.svg" alt="Bee on Rocket" />
-        </div>
+      <div class="mascot-wrapper">
+        <img src="./src/assets/Images/Logo/logo.svg" alt="Bee on Rocket" />
       </div>
     </div>
   </section>
@@ -85,27 +81,154 @@
     </div>
   </section>
 
-  <!-- 3 SIMPLE STEPS -->
+ <!-- Youtube Video Frame  -->
+  <section class="video-section">
+    <div class="video-wrapper" id="videoWrapper">
+      <!-- Thumbnail shown before play -->
+      <div class="video-thumbnail" id="videoThumb" onclick="playVideo()">
+        <img
+          src="https://img.youtube.com/vi/jo3p7O8n6is/maxresdefault.jpg"
+          alt="Watch how Launch works"
+          onerror="this.src='https://www.youtube.com/watch?v=jo3p7O8n6is&t=132s'"
+        />
+        <div class="play-btn">
+          <svg viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="36" cy="36" r="36" fill="white" opacity="0.95"/>
+            <polygon points="28,20 56,36 28,52" fill="#3E206D"/>
+          </svg>
+        </div>
+      </div>
+      <!-- YouTube iframe, loaded on play click -->
+      <iframe
+            class="video-iframe"
+            id="videoIframe"
+            src=""
+            title="Launch – How It Works"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+       </iframe>
+    </div>
+  </section>
+
+  <!-- 3 SIMPLE STEPS — all 3 always visible, stacked -->
   <section class="steps">
     <h2 class="section-title">Launch Your Store in 3 Simple Steps</h2>
-    <div class="step-block">
+ 
+    <!-- STEP 01 -->
+    <div class="step-block" id="step-1">
       <div class="step-number">01</div>
       <div class="step-name">Choose Your Plan</div>
       <p class="step-desc">Select The Plan That Fits Your Stage — From Student Trial To Full Business Launch.</p>
+      <button class="step-next" onclick="nextStep()">Next Steps →</button>
       <div class="step-progress">
-        <div class="dot active"></div>
-        <div class="dot inactive"></div>
-        <div class="dot inactive"></div>
+        <button class="step-dot" onclick="goToStep(1)"></button>
+        <button class="step-dot" onclick="goToStep(2)"></button>
+        <button class="step-dot" onclick="goToStep(3)"></button>
       </div>
-      <a class="step-next" href="#">Next Steps →</a>
     </div>
+ 
+    <!-- STEP 02 -->
+    <div class="step-block" id="step-2">
+      <div class="step-number">02</div>
+      <div class="step-name">Submit Business Details</div>
+      <p class="step-desc">Share Your Brand Name, Products, And Preferences. We Handle The Rest.</p>
+      <button class="step-next" onclick="nextStep()">Next Steps →</button>
+      <div class="step-progress">
+        <button class="step-dot" onclick="goToStep(1)"></button>
+        <button class="step-dot" onclick="goToStep(2)"></button>
+        <button class="step-dot" onclick="goToStep(3)"></button>
+      </div>
+    </div>
+ 
+    <!-- STEP 03 -->
+    <div class="step-block" id="step-3">
+      <div class="step-number">03</div>
+      <div class="step-name">We Build Your Store in 7 Days</div>
+      <p class="step-desc">Our Team Designs, Develops, And Delivers Your Complete Ecommerce Store.</p>
+      <div class="step-deliverables">
+        <div class="step-deliverables-label">After Delivery You Receive:</div>
+        <div class="step-deliverables-items">
+          <span>+ Admin Panel</span>
+          <span>+ Website Access</span>
+          <span>+ Business Email</span>
+          <span>+ Complete Guide</span>
+        </div>
+      </div>
+      <div class="step-progress">
+        <button class="step-dot" onclick="goToStep(1)"></button>
+        <button class="step-dot" onclick="goToStep(2)"></button>
+        <button class="step-dot" onclick="goToStep(3)"></button>
+      </div>
+    </div>
+ 
   </section>
+
+  <!-- PRICING SECTION -->
+<section class="pricing">
+  <h2 class="pricing-title">Choose Your Launch Plan</h2>
+
+  <div class="pricing-grid">
+
+    <!-- CARD 1 -->
+    <div class="pricing-card">
+      <div class="plan-name">Launch Trial</div>
+      <div class="plan-tag">Student Plan</div>
+      <div class="plan-price">₹699<span class="plan-freq">/ month</span></div>
+      <div class="plan-note">3 month validation plan</div>
+      <ul class="plan-features">
+        <li>+ Ecommerce Website</li>
+        <li>+ Hosting + SSL</li>
+        <li>+ 2 Business Emails</li>
+        <li>+ Payment Gateway</li>
+        <li>+ Video Guide + Manual</li>
+        <li>+ Basic Support</li>
+      </ul>
+      <a href="#" class="plan-btn-primary">Start Trial</a>
+      <a href="#" class="plan-btn-secondary">View Details</a>
+      <div class="plan-footer-note">Best For Students Testing An Idea</div>
+    </div>
+
+    <!-- CARD 2 - POPULAR (purple) -->
+    <div class="pricing-card popular">
+      <div class="plan-name">Launch Startup</div>
+      <div class="plan-tag">Most Popular</div>
+      <div class="plan-price">₹7,999<span class="plan-freq">setup</span></div>
+      <div class="plan-note">₹1,999/month after 2 months</div>
+      <ul class="plan-features">
+        <li>+ Everything In Trial Plan</li>
+        <li>+ 5 Business Emails</li>
+        <li>+ 2 Months Free Maintenance</li>
+      </ul>
+      <a href="#" class="plan-btn-primary">Start Trial</a>
+      <a href="#" class="plan-btn-secondary">View Details</a>
+      <div class="plan-footer-note">Best For Students Testing An Idea</div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="pricing-card">
+      <div class="plan-name">Launch Business</div>
+      <div class="plan-tag">&nbsp;</div>
+      <div class="plan-price">₹14,999<span class="plan-freq">setup</span></div>
+      <div class="plan-note">2,999/month after 2 months</div>
+      <ul class="plan-features">
+        <li>+ Everything In Startup Plan</li>
+        <li>+ Android App</li>
+        <li>+ 10 Business Emails</li>
+        <li>+ Priority Support</li>
+      </ul>
+      <a href="#" class="plan-btn-primary">Start Trial</a>
+      <a href="#" class="plan-btn-secondary">View Details</a>
+      <div class="plan-footer-note">Best For Students Testing An Idea</div>
+    </div>
+
+  </div>
+</section>
 
   <!-- FOOTER -->
   <footer>
     <span>Launch</span> — Powered by BrandOptix &nbsp;|&nbsp; © 2026 All Rights Reserved
   </footer>
 
+<script src="src/main.js"></script>
 </body>
-
 </html>
