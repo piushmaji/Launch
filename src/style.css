@@ -647,6 +647,202 @@ nav {
     .pricing-grid:hover .pricing-card { filter: none; transform: none; }
 }
 
+/* ── EVERYTHING YOU NEED ── */
+.everything-you-need {
+    background: var(--purple-pale);
+    padding: 80px 80px;
+}
+
+.features-list-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 32px;
+}
+
+.feature-col {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.feature-col span {
+    font-size: 0.95rem;
+    color: var(--text-grey);
+    font-weight: 500;
+}
+
+/* ── NEW ENTREPRENEURS STRIP ── */
+.new-entrepreneurs {
+    background: var(--white);
+    padding: 80px 80px;
+}
+
+.steps-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.step-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.step-num {
+    font-size: 1.8rem;
+    font-weight: 300;
+    color: var(--purple-light);
+}
+
+.step-text {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-grey);
+}
+
+.steps-note {
+    margin-top: 24px;
+    font-size: 0.8rem;
+    color: var(--purple-light);
+    max-width: 400px;
+    line-height: 1.5;
+}
+
+/* ── NEED HELP ── */
+.need-help {
+    background: var(--purple-pale);
+    padding: 80px 80px;
+}
+
+.help-desc {
+    font-size: 0.95rem;
+    color: var(--purple-light);
+    line-height: 1.6;
+    margin-bottom: 24px;
+}
+
+.help-desc a {
+    color: var(--purple-mid);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.btn-outline-purple {
+    display: inline-block;
+    padding: 12px 28px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--purple-mid);
+    border: 2px solid var(--purple-light);
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.btn-outline-purple:hover {
+    background: var(--purple-mid);
+    color: var(--white);
+    border-color: var(--purple-mid);
+}
+
+/* ── QUESTIONS ── */
+.questions {
+    background: var(--white);
+    padding: 80px 80px;
+}
+
+.faq-container {
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.faq-item {
+    border: 1px solid rgba(160, 135, 199, 0.2);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.faq-question {
+    width: 100%;
+    text-align: left;
+    background: var(--white);
+    border: none;
+    padding: 20px 24px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text-grey);
+    text-transform: uppercase;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: inherit;
+    transition: background 0.2s;
+}
+
+.faq-question:hover {
+    background: rgba(160, 135, 199, 0.05);
+}
+
+.faq-question .chevron {
+    transition: transform 0.3s ease;
+    color: var(--purple-light);
+}
+
+.faq-item.active .faq-question .chevron {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    background: rgba(160, 135, 199, 0.02);
+}
+
+.faq-answer p {
+    padding: 0 24px 24px;
+    font-size: 0.9rem;
+    color: var(--text-grey);
+    line-height: 1.6;
+}
+
+/* ── READY TO LAUNCH ── */
+.ready-to-launch {
+    background: var(--purple-pale);
+    padding: 80px 80px;
+}
+
+.launch-desc {
+    font-size: 0.95rem;
+    color: var(--purple-light);
+    margin-bottom: 24px;
+}
+
+.btn-solid-purple {
+    display: inline-block;
+    padding: 14px 32px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    background: var(--purple-mid);
+    color: var(--white);
+    border: 2px solid var(--purple-mid);
+    text-decoration: none;
+    transition: background 0.2s, border-color 0.2s;
+}
+
+.btn-solid-purple:hover {
+    background: var(--purple-dark);
+    border-color: var(--purple-dark);
+}
+
 /* ── FOOTER ── */
 footer {
     background: var(--purple-dark);
